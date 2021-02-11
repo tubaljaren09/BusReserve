@@ -25,6 +25,54 @@ body{
     grid-column:1/2;
     grid-row:1/2;
 }
+.main .main-top .container-top{
+    width:60%;
+    height:100%;
+    margin:auto;
+    /* Grid */
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:1fr 1fr;
+}
+.main .main-top .container-top .top{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
+    /* Grid from container-top */
+    grid-column:1/2;
+    grid-row:1/2;
+}
+.main .main-top .container-top .top h1{
+    font-size:60px;
+}
+.main .main-top .container-top .bottom{
+    /* Grid from container-top */
+    grid-column:1/2;
+    grid-row:2/3;
+}
+.main .main-top .container-top .bottom .content ul{
+    list-style-type:none;
+    background-color:#141414;
+    width:60%;
+    margin:auto;
+    border-radius:20px;
+    padding:20px;
+    display:flex;
+    justify-content:center;
+}
+.main .main-top .container-top .bottom .content ul li a{
+    text-decoration:none;
+    color:rgba(255,255,255,.2);
+    padding:20px;
+}
+.main .main-top .container-top .bottom .content ul li a:hover{
+    color:white;
+}
+.main .main-top .container-top .bottom .content ul li .active{
+    color:white;
+}
 .main .main-middle{
     background-image:url('../images/overlay.png');
     background-size:auto;
