@@ -30,10 +30,20 @@
             </div>
         </div>
         <div class="main-middle">
-
+            <div class="container-middle">
+                <div class="content">
+                    <h1>Bus Ticket Reservation made easier</h1>
+                    <h3>WE AIM TO PROVIDE MORE CONVENIENT TICKET BOOKING.</h3><br>
+                    <img src="./images/pics02.jpg">
+                    <h4>In compliance to minimum health protocols, temperature checks are being implemented to all passengers. Those with<br>temperatures above 37.6 will not allowed to board the bus and will be advised to seek medical help. Wearing of face<br>masks and face shields at all times is required.</h4><br>
+                    <button>BOOK TICKET NOW</button>
+                </div>
+            </div>
         </div>
         <div class="main-bottom">
-
+            <div class="content">
+                <h3>Copyright &copy; 2021</h3>
+            </div>
         </div>
     </div>
 </body>
