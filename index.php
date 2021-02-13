@@ -20,7 +20,7 @@
                     <div class="content">
                         <ul>
                             <li><a class="active" href="index.php">HOMEPAGE</a></li>
-                            <li><a href="#">BOOK TICKET</a></li>
+                            <li><a href="bookticket.php">BOOK TICKET</a></li>
                             <li><a href="#">ABOUT US</a></li>
                             <li><a href="#">ABOUT BUS</a></li>
                             <li><a href="#">ADMIN</a></li>
@@ -46,5 +46,6 @@
             </div>
         </div>
     </div>
+<script src="./scripts/index.js"></script>
 </body>
 </html>
