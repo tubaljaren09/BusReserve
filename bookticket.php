@@ -23,7 +23,7 @@
                             <li><a class="active" href="bookticket.php">BOOK TICKET</a></li>
                             <li><a href="#">ABOUT US</a></li>
                             <li><a href="#">ABOUT BUS</a></li>
-                            <li><a href="#">ADMIN</a></li>
+                            <li><a href="admin.php">ADMIN</a></li>
                         </ul>
                     </div>
                 </div>
