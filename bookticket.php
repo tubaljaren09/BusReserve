@@ -1,3 +1,39 @@
+<?php 
+    $host = 'localhost';
+    $user = 'root';
+    $password = '';
+    $database = 'bus_reserve_db';
+
+    $connection = mysqli_connect($host, $user, $password, $database);
+
+    if(mysqli_connect_error()){
+        echo 'Unable to connect';
+    }
+
+    if(isset($_POST['submit'])){
+        $lastName = $_POST['lname'];
+        $firstName = $_POST['fname'];
+        $middleName = $_POST['mname'];
+        $gender = $_POST['gender'];
+        $age = $_POST['age'];
+        $address = $_POST['address'];
+        $contactNumber = $_POST['contactnumber'];
+        $email = $_POST['email'];
+        $q1 = $_POST['q1'];
+        $q2 = $_POST['q2'];
+        $q3 = $_POST['q3'];
+
+        if(empty($lastName) || empty($firstName) || empty($middleName) || empty($gender) || empty($age) || empty($address) || empty($contactNumber) || empty($email) || empty($q1) || empty($q2) || empty($q3)){    
+            echo "<script>alert('Fill up all fields')</script>";        
+        }else{
+            $queryRegister = "INSERT INTO covid_tracing_form(lastName, firstName, middleName, gender, age, address, contactNumber, email, question1, question2, question3) 
+            VALUES ('$lastName', '$firstName', '$middleName', '$gender', '$age', '$address', '$contactNumber', '$email', '$q1', '$q2', '$q3')";
+            $sqlRegister = mysqli_query($connection, $queryRegister);
+
+            echo "<script>alert('Registered')</script>";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
@@ -95,7 +131,7 @@
                             <label>No</label>                       
                             <input type="radio" name="q3" value="No">
                         </div>
-                        <button>SUBMIT</button>
+                        <button name="submit">SUBMIT</button>
                     </div> 
                 </form>
             </div>
