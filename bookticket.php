@@ -1,4 +1,5 @@
-<?php 
+<?php
+    error_reporting(0);
     $host = 'localhost';
     $user = 'root';
     $password = '';
@@ -23,15 +24,19 @@
         $q2 = $_POST['q2'];
         $q3 = $_POST['q3'];
 
-        if(empty($lastName) || empty($firstName) || empty($middleName) || empty($gender) || empty($age) || empty($address) || empty($contactNumber) || empty($email) || empty($q1) || empty($q2) || empty($q3)){    
-            echo "<script>alert('Fill up all fields')</script>";        
-        }else{
-            $queryRegister = "INSERT INTO covid_tracing_form(lastName, firstName, middleName, gender, age, address, contactNumber, email, question1, question2, question3) 
-            VALUES ('$lastName', '$firstName', '$middleName', '$gender', '$age', '$address', '$contactNumber', '$email', '$q1', '$q2', '$q3')";
-            $sqlRegister = mysqli_query($connection, $queryRegister);
+        $select = $_POST['cars'];
+        $departure = $_POST['departure'];
 
-            echo "<script>alert('Registered')</script>";
-        }
+        $queryRegister = "INSERT INTO covid_tracing_form(lastName, firstName, middleName, gender, age, address, contactNumber, email, question1, question2, question3) 
+        VALUES ('$lastName', '$firstName', '$middleName', '$gender', '$age', '$address', '$contactNumber', '$email', '$q1', '$q2', '$q3')";
+        $queryRegister2 = "INSERT INTO ticket_form(route, date) 
+        VALUES ('$select', '$departure')";
+        $sqlRegister = mysqli_query($connection, $queryRegister);
+        $sqlRegister2 = mysqli_query($connection, $queryRegister2);
+
+        echo "<script>alert('Registered')</script>";
+
+
     }
 ?>
 <!DOCTYPE html>
@@ -75,15 +80,15 @@
                     <div class="form-top">
                         <div class="content">
                             <label>Last name:</label>
-                            <input type="text" name="lname">
+                            <input type="text" name="lname" required>
                         </div>
                         <div class="content">
                             <label>First name:</label>
-                            <input type="text" name="fname">
+                            <input type="text" name="fname" required>
                         </div>
                         <div class="content">
                             <label>Middle name:</label>
-                            <input type="text" name="mname">
+                            <input type="text" name="mname" required>
                         </div>
                         <div class="content">
                             <label>Gender:</label>
@@ -94,19 +99,19 @@
                         </div>
                         <div class="content">
                             <label>Age:</label>
-                            <input type="text" name="age">
+                            <input type="text" name="age" required>
                         </div>
                         <div class="content">
                             <label>Address:</label>
-                            <input type="text" name="address">
+                            <input type="text" name="address" required>
                         </div>
                         <div class="content">
                             <label>Contact Number:</label>
-                            <input type="text" name="contactnumber">
+                            <input type="text" name="contactnumber" required>
                         </div>
                         <div class="content">
                             <label>Email Address:</label>
-                            <input type="text" name="email">
+                            <input type="text" name="email" required>
                            </div>
                     </div>
                     <div class="form-bottom">
@@ -131,9 +136,36 @@
                             <label>No</label>                       
                             <input type="radio" name="q3" value="No">
                         </div>
-                        <button name="submit">SUBMIT</button>
-                    </div> 
+                    </div>
+                    <input type="submit" id="submit-form" class="hidden" name="submit"> 
                 </form>
+                <button id="modalBtn" name="next">Next</button>
+                <div id="simpleModal" class="modal">
+                    <div class="modal-content">
+                        <span class="closeBtn">&times;</span>
+                        <form action="/BusReserve/bookticket.php" method="post">
+                            <div class="form-greet">
+                                <h1>Ticket Details</h1>
+                                <h4>PLEASE FILL OUT THE FORM COMPLETELY.</h4>
+                            </div>
+                            <div class="content">
+                                <label>Route:</label>
+                                <select name="cars" id="cars">
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                    <option value="opel">Opel</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                            </div>
+                            <div class="content">
+                            <label>Departure Date:</label>
+                                <input type="date" id="departure" name="departure">
+                            </div>
+                            <input type="submit" id="submit-form" class="hidden" name="submit"> 
+                        </form>
+                        <label class="submitBtn" for="submit-form" tabindex="0">Submit</label>
+                    </div>
+                </div>
             </div>
          </div>
         <div class="main-bottom">
@@ -142,5 +174,6 @@
             </div>
         </div>
     </div>
+<script src="./scripts/bookticket.js"></script>
 </body>
 </html>
