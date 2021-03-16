@@ -9,25 +9,11 @@
     if(mysqli_connect_error()){
         echo 'Unable to connect';
     }
+    $queryAccounts = "SELECT * FROM ticket_form";
+    $sqlAccounts = mysqli_query($connection, $queryAccounts);
 
-    if(isset($_POST['login'])){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-
-        if(empty($username) || empty($password)){
-            echo "<script>alert('Fill up all fields')</script>";
-        }else{
-            $queryLogin = "SELECT * FROM admin WHERE user = '$username' AND pass = '$password'";
-            $sqlLogin = mysqli_query($connection, $queryLogin);
-            $rowResults = mysqli_fetch_array($sqlLogin);
-
-            if(mysqli_num_rows($sqlLogin) > 0){
-                echo "<script>alert('LoggedIn')</script>";
-                echo "<script>window.location.href='/BusReserve/database.php'</script>";
-            }else{
-                echo "<script>alert('Failed')</script>";
-            }
-        }
+    if(isset($_POST['logout'])){
+        echo "<script>window.location.href='/BusReserve/admin.php'</script>";
     }
 ?>
 <!DOCTYPE html>
@@ -36,7 +22,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BRTMA</title>
-    <link rel="stylesheet" href="./styles/admin.css">
+    <link rel="stylesheet" href="./styles/database.css">
 </head>
 <body>
     <div class="main">
@@ -64,21 +50,22 @@
         <div class="main-middle">
             <div class="container-middle">
                 <div class="content">
-                    <form action="/BusReserve/admin.php" method="post">
-                        <div class="content">
-                            <h1>Login</h1>
-                        </div>
-                        <div class="content">
-                            <label>Username:</label>
-                            <input type="text" name="username">   
-                        </div>
-                        <div class="content">
-                            <label>Password:</label>
-                            <input type="password" name="password">
-                        </div>
-                        <div class="content">
-                            <input type="submit" name="login" value="LOGIN">
-                        </div>
+                    <table class="read-db">
+                        <tr>
+                            <th>ID</th>
+                            <th>ROUTE</th>
+                            <th>DATE</th>
+                        </tr>
+                        <?php while($results = mysqli_fetch_array($sqlAccounts)) { ?>
+                        <tr>
+                            <td><?php echo $results['id'] ?></td>
+                            <td><?php echo $results['route'] ?></td>
+                            <td><?php echo $results['date'] ?></td>
+                        </tr>
+                        <?php } ?>
+                    </table>
+                    <form action="/BusReserve/database.php" method="post">
+                        <input type="submit" name="logout" value="LOGOUT">
                     </form>
                 </div>
             </div>
