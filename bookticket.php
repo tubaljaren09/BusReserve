@@ -1,16 +1,22 @@
 <?php
+    require ('./database.php');
+
     error_reporting(0);
-    $host = 'localhost';
-    $user = 'root';
-    $password = '';
-    $database = 'bus_reserve_db';
 
-    $connection = mysqli_connect($host, $user, $password, $database);
+    session_start();
 
-    if(mysqli_connect_error()){
-        echo 'Unable to connect';
+    function pathTo($destination){
+        echo "<script>window.location.href='/BusReserve/$destination.php'</script>";
+    }
+    
+     if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
+        $_SESSION['status'] = 'invalid';
     }
 
+    if($_SESSION['status'] == 'valid'){
+        pathTo('viewdata');
+    }
+    
     if(isset($_POST['submit'])){
         $lastName = $_POST['lname'];
         $firstName = $_POST['fname'];
@@ -72,9 +78,7 @@
         </div>
         <div class="main-middle">
             <div class="container-middle">
-                <div class="buttonnext">
-                    <button id="modalBtn" name="next">Next</button>
-                </div>
+                <!--PLACE BUTTON HERE-->
                 <form id="form1" action="/BusReserve/bookticket.php" method="post">
                     <div class="form-greet">
                         <h1>Covid-19 Tracing Form</h1>
@@ -147,23 +151,38 @@
                             <h1>Ticket Details</h1>
                             <h4>PLEASE FILL OUT THE FORM COMPLETELY.</h4>
                         </div>
+                        <div style="margin-top:5px;"></div>
                         <div class="content">
                             <label>Route:</label>
-                            <select name="cars" id="cars">
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="opel">Opel</option>
-                                <option value="audi">Audi</option>
+                            <select name="route" id="route">
+                                <option value="manila to cebu">Manila - Cebu</option>
+                                <option value="cebu to manila">Cebu - Manila</option>
+                                <option value="manila to japan">Manila - Japan</option>
+                                <option value="japan to manila">Japan - Manila</option>
                             </select>
                         </div>
+                        <div style="margin-top:5px;"></div>
+                        <div class="content">
+                            <label>Bus:</label>
+                            <select name="bus" id="bus">
+                                <option value="bus1">Bus 1</option>
+                                <option value="bus2">Bus 2</option>
+                                <option value="bus3">Bus 3</option>
+                            </select>
+                        </div>
+                        <div style="margin-top:5px;"></div>
                         <div class="content">
                             <label>Departure Date:</label>
                             <input type="date" id="departure" name="departure">
                         </div>
                         <input type="submit" id="submit-form" class="hidden" name="submit"> 
                 </form>
+                        <div style="margin-top:20px;"></div>
                         <label class="submitBtn" for="submit-form" tabindex="0">Submit</label>
                     </div>
+                </div>
+                <div class="buttonnext">
+                    <button id="modalBtn" name="next">Next</button>
                 </div>
             </div>
          </div>

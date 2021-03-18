@@ -1,3 +1,18 @@
+<?php 
+    session_start();
+
+    function pathTo($destination){
+        echo "<script>window.location.href='/BusReserve/$destination.php'</script>";
+    }
+    
+     if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
+        $_SESSION['status'] = 'invalid';
+    }
+
+    if($_SESSION['status'] == 'valid'){
+        pathTo('viewdata');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
@@ -36,7 +51,7 @@
                     <h3>WE AIM TO PROVIDE MORE CONVENIENT TICKET BOOKING.</h3><br>
                     <img src="./images/pics02.jpg">
                     <h4>In compliance to minimum health protocols, temperature checks are being implemented to all passengers. Those with<br>temperatures above 37.6 will not allowed to board the bus and will be advised to seek medical help. Wearing of face<br>masks and face shields at all times is required.</h4><br>
-                    <button>BOOK TICKET NOW</button>
+                    <button id="book">BOOK TICKET NOW</button>
                 </div>
             </div>
         </div>
@@ -46,5 +61,6 @@
             </div>
         </div>
     </div>
+    <script src="./scripts/index.js"></script>
 </body>
 </html>

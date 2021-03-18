@@ -101,6 +101,7 @@ body{
     color:white;
     border:none;
     padding:20px 30px;
+    outline:none;
 }
 .main .main-bottom{
     display:flex;

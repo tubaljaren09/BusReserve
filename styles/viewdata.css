@@ -84,9 +84,40 @@ body{
     grid-column:1/2;
     grid-row:2/3;
 }
+.main .main-middle .container-middle{
+    height:100%;
+}
 .main .main-middle .container-middle .content{
+    height:100%;
+    width:80%;
+    margin:auto;
     display:flex;
-    justify-content:center;
+    justify-content:space-evenly;
+    flex-direction:column;
+}
+.main .main-middle .container-middle .content form input[type=submit]{
+    border-radius:10px;
+    background-color:#121212;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    outline:none;
+}
+.main .main-middle .container-middle .content .info-table table{
+    text-align:center;
+}
+.main .main-middle .container-middle .content .info-table table, tr, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding:5px;
+}
+.main .main-middle .container-middle .content .ticket-table table{
+    text-align:center;
+}
+.main .main-middle .container-middle .content .ticket-table table, tr, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding:5px;
 }
 .main .main-bottom{
     display:flex;

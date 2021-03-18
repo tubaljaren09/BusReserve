@@ -1,13 +1,18 @@
-<?php 
-    $host = 'localhost';
-    $user = 'root';
-    $password = '';
-    $database = 'bus_reserve_db';
+<?php
+    require ('./database.php');
 
-    $connection = mysqli_connect($host, $user, $password, $database);
+    session_start();
 
-    if(mysqli_connect_error()){
-        echo 'Unable to connect';
+    function pathTo($destination){
+        echo "<script>window.location.href='/BusReserve/$destination.php'</script>";
+    }
+
+    if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
+        $_SESSION['status'] = 'invalid';
+    }
+
+    if($_SESSION['status'] == 'valid'){
+        pathTo('viewdata');
     }
 
     if(isset($_POST['login'])){
@@ -22,9 +27,12 @@
             $rowResults = mysqli_fetch_array($sqlLogin);
 
             if(mysqli_num_rows($sqlLogin) > 0){
-                echo "<script>alert('LoggedIn')</script>";
-                echo "<script>window.location.href='/BusReserve/database.php'</script>";
+                $_SESSION['status'] = 'valid';
+                $_SESSION['username'] = $rowResults['user'];
+                echo "<script>alert('You have successfully signed in')</script>";
+                pathTo('viewdata');
             }else{
+                $_SESSION['status'] = 'invalid';
                 echo "<script>alert('Failed')</script>";
             }
         }
@@ -89,5 +97,6 @@
             </div>
         </div>
     </div>
+    <script src="./scripts/admin.js"></script>
 </body>
 </html>
