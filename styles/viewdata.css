@@ -95,6 +95,45 @@ body{
     justify-content:space-evenly;
     flex-direction:column;
 }
+.main .main-middle .container-middle .content .info-table{
+    height:180px;
+    overflow-y:scroll;
+}
+.main .main-middle .container-middle .content .info-table table{
+    height:180px;
+    text-align:center;
+}
+.main .main-middle .container-middle .content .info-table table th{
+    background-color:#121212;
+    color:white;
+    position:sticky;
+    top:0;
+}
+.main .main-middle .container-middle .content .ticket-table{
+    height:180px;
+    width:40%;
+    overflow-y:scroll;
+}
+.main .main-middle .container-middle .content .ticket-table table{
+    height:180px;
+    width:100%;
+    text-align:center;
+}
+.main .main-middle .container-middle .content .ticket-table table th{
+    background-color:#121212;
+    color:white;
+    position:sticky;
+    top:0;
+}
+.main .main-middle .container-middle .content tr, th, td{
+    padding:7px;
+}
+.main .main-middle .container-middle .content tr:nth-child(even){
+    background-color:#CCC;
+}
+.main .main-middle .container-middle .content tr:nth-child(odd){
+    background-color:#FFF;
+}
 .main .main-middle .container-middle .content form input[type=submit]{
     border-radius:10px;
     background-color:#121212;
@@ -102,22 +141,6 @@ body{
     border:none;
     padding:10px 20px;
     outline:none;
-}
-.main .main-middle .container-middle .content .info-table table{
-    text-align:center;
-}
-.main .main-middle .container-middle .content .info-table table, tr, th, td{
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding:5px;
-}
-.main .main-middle .container-middle .content .ticket-table table{
-    text-align:center;
-}
-.main .main-middle .container-middle .content .ticket-table table, tr, th, td{
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding:5px;
 }
 .main .main-bottom{
     display:flex;

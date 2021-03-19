@@ -30,13 +30,13 @@
         $q2 = $_POST['q2'];
         $q3 = $_POST['q3'];
 
-        $select = $_POST['cars'];
+        $route = $_POST['route'];
         $departure = $_POST['departure'];
 
         $queryRegister = "INSERT INTO covid_tracing_form(lastName, firstName, middleName, gender, age, address, contactNumber, email, question1, question2, question3) 
         VALUES ('$lastName', '$firstName', '$middleName', '$gender', '$age', '$address', '$contactNumber', '$email', '$q1', '$q2', '$q3')";
         $queryRegister2 = "INSERT INTO ticket_form(route, date) 
-        VALUES ('$select', '$departure')";
+        VALUES ('$route', '$departure')";
         $sqlRegister = mysqli_query($connection, $queryRegister);
         $sqlRegister2 = mysqli_query($connection, $queryRegister2);
 

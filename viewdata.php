@@ -50,9 +50,9 @@
             <div class="container-middle">
                 <div class="content">
                     <h2><?php echo $_SESSION['username'] ?></h2>
+                    <h1>Covid Tracing Form</h1>
                     <div class="info-table">
-                        <table class="read-db">
-                            <h1>Covid Tracing Form</h1>
+                        <table>
                             <tr>
                                 <th>ID</th>
                                 <th>LAST NAME</th>
@@ -85,9 +85,9 @@
                             <?php } ?>
                         </table>
                     </div>
+                    <h1>Ticket Details</h1>
                     <div class="ticket-table">
-                        <table class="read-db">
-                            <h1>Ticket Details</h1>
+                        <table>
                             <tr>
                                 <th>ID</th>
                                 <th>ROUTE</th>
