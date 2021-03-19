@@ -31,12 +31,13 @@
         $q3 = $_POST['q3'];
 
         $route = $_POST['route'];
+        $bus = $_POST['bus'];
         $departure = $_POST['departure'];
 
         $queryRegister = "INSERT INTO covid_tracing_form(lastName, firstName, middleName, gender, age, address, contactNumber, email, question1, question2, question3) 
         VALUES ('$lastName', '$firstName', '$middleName', '$gender', '$age', '$address', '$contactNumber', '$email', '$q1', '$q2', '$q3')";
-        $queryRegister2 = "INSERT INTO ticket_form(route, date) 
-        VALUES ('$route', '$departure')";
+        $queryRegister2 = "INSERT INTO ticket_form(owner_id, route, bus, departure) 
+        VALUES ((SELECT id from covid_tracing_form WHERE email='$email'), '$route', '$bus', '$departure')";
         $sqlRegister = mysqli_query($connection, $queryRegister);
         $sqlRegister2 = mysqli_query($connection, $queryRegister2);
 
@@ -165,9 +166,9 @@
                         <div class="content">
                             <label>Bus:</label>
                             <select name="bus" id="bus">
-                                <option value="bus1">Bus 1</option>
-                                <option value="bus2">Bus 2</option>
-                                <option value="bus3">Bus 3</option>
+                                <option value="Bus 1">Bus 1</option>
+                                <option value="Bus 2">Bus 2</option>
+                                <option value="Bus 3">Bus 3</option>
                             </select>
                         </div>
                         <div style="margin-top:5px;"></div>

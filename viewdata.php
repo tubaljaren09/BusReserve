@@ -93,14 +93,18 @@
                         <table>
                             <tr>
                                 <th>ID</th>
+                                <th>OWNER ID</th>
                                 <th>ROUTE</th>
-                                <th>DATE</th>
+                                <th>BUS</th>
+                                <th>DEPARTURE DATE</th>
                             </tr>
                             <?php while($results = mysqli_fetch_array($sqlAccounts)) { ?>
                             <tr>
                                 <td><?php echo $results['id'] ?></td>
+                                <td><?php echo $results['owner_id'] ?></td>
                                 <td><?php echo $results['route'] ?></td>
-                                <td><?php echo $results['date'] ?></td>
+                                <td><?php echo $results['bus'] ?></td>
+                                <td><?php echo $results['departure'] ?></td>
                             </tr>
                             <?php } ?>
                         </table>
