@@ -2,6 +2,8 @@
     require ('./database.php');
     require ('./session.php');
 
+    error_reporting(0);
+    
     $queryAccounts = "SELECT * FROM ticket_form";
     $queryCovid = "SELECT * FROM covid_tracing_form";
     $sqlAccounts = mysqli_query($connection, $queryAccounts);

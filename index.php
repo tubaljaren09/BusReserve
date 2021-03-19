@@ -1,6 +1,8 @@
 <?php 
-    session_start();
+    error_reporting(0);
 
+    session_start();
+    
     function pathTo($destination){
         echo "<script>window.location.href='/BusReserve/$destination.php'</script>";
     }
