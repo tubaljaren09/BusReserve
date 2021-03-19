@@ -49,7 +49,10 @@
         <div class="main-middle">
             <div class="container-middle">
                 <div class="content">
-                    <h2><?php echo $_SESSION['username'] ?></h2>
+                    <div class="admin">
+                        <img src="./images/adminlogo.png">
+                        <h2><?php echo $_SESSION['username'] ?></h2>
+                    </div>
                     <h1>Covid Tracing Form</h1>
                     <div class="info-table">
                         <table>

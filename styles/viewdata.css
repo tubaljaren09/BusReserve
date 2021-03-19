@@ -95,6 +95,13 @@ body{
     justify-content:space-evenly;
     flex-direction:column;
 }
+.main .main-middle .container-middle .content .admin{
+    display:flex;
+    align-items:flex-end;
+}
+.main .main-middle .container-middle .content .admin h2{
+    margin-left:10px;
+}
 .main .main-middle .container-middle .content .info-table{
     height:180px;
     overflow-y:scroll;
