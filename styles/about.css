@@ -1,0 +1,198 @@
+@font-face{
+    font-family:Oxygen;
+    src:url('../fonts/Oxygen-Light.ttf');
+}
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    font-family:Oxygen;
+}
+.main{
+    width:100%;
+    height:100vh;
+    /* Grid */
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:40% 210% 10%;
+}
+.main .main-top{
+    background-image:url('../images/header.jpg');
+    background-size:cover;
+    background-position:center;
+    /* Grid from main */
+    grid-column:1/2;
+    grid-row:1/2;
+}
+.main .main-top .container-top{
+    width:60%;
+    height:100%;
+    margin:auto;
+    /* Grid */
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:1fr 1fr;
+}
+.main .main-top .container-top .top{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
+    /* Grid from container-top */
+    grid-column:1/2;
+    grid-row:1/2;
+}
+.main .main-top .container-top .top h1{
+    font-size:60px;
+}
+.main .main-top .container-top .top h3{
+    letter-spacing:1px;
+}
+.main .main-top .container-top .bottom{
+    /* Grid from container-top */
+    grid-column:1/2;
+    grid-row:2/3;
+}
+.main .main-top .container-top .bottom .content ul{
+    list-style-type:none;
+    background-color:#141414;
+    width:60%;
+    margin:auto;
+    border-radius:30px;
+    padding:20px;
+    display:flex;
+    justify-content:center;
+}
+.main .main-top .container-top .bottom .content ul li a{
+    text-decoration:none;
+    color:rgba(255,255,255,.2);
+    padding:20px;
+}
+.main .main-top .container-top .bottom .content ul li a:hover{
+    color:white;
+}
+.main .main-top .container-top .bottom .content ul li .active{
+    color:white;
+}
+.main .main-middle{
+    animation:transitionIn 0.75s;
+    background-image:url('../images/overlay.png');
+    background-size:auto;
+    /* Grid from main */
+    grid-column:1/2;
+    grid-row:2/3;
+}
+.main .main-middle .container-middle{
+    width:70%;
+    height:100%;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+}
+.main .main-middle .container-middle .content-left{
+    width:100%;
+}
+.main .main-middle .container-middle .content-right{
+    width:100%;
+}
+.main .main-middle .container-middle .content-left img{
+    float:left;
+    padding-right:20px;
+}
+.main .main-middle .container-middle .content-right img{
+    float:right;
+    padding-left:20px;
+}
+.main .main-middle .container-middle .content-left #medinalogo{
+    border-radius:250px;
+}
+.main .main-middle .container-middle .content-left #tuballogo{
+    border-radius:250px;
+}
+.main .main-middle .container-middle .content-right #sillanologo{
+    border-radius:250px;
+}
+.main .main-middle .container-middle .content-right #lumansoclogo{
+    border-radius:250px;
+}
+.main .main-middle .container-middle .content-left .text{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+.main .main-middle .container-middle .content-right .text{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-end;
+}
+.main .main-bottom{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:rgba(255,255,255,.2);
+    background-color:#121212;
+    /* Grid from main */
+    grid-column:1/2;
+    grid-row:3/4;
+}
+@keyframes transitionIn{
+    from{
+        opacity:0;
+        transform:translateX(-10deg);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+@media only screen and (max-width:1680px){
+    .main .main-top .container-top{
+        width:70%;
+        height:100%;
+        margin:auto;
+        /* Grid */
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:1fr 1fr;
+    }
+}
+@media only screen and (max-width:1445px){
+    .main .main-top .container-top{
+        width:80%;
+        height:100%;
+        margin:auto;
+        /* Grid */
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:1fr 1fr;
+    }
+}
+@media only screen and (max-width:1265px){
+    .main .main-top .container-top{
+        width:90%;
+        height:100%;
+        margin:auto;
+        /* Grid */
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:1fr 1fr;
+    }
+}
+@media only screen and (max-width:1125px){
+    .main .main-top .container-top{
+        width:100%;
+        height:100%;
+        margin:auto;
+        /* Grid */
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:1fr 1fr;
+    }
+}

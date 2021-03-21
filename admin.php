@@ -63,7 +63,7 @@
                         <ul>
                             <li><a href="index.php">HOMEPAGE</a></li>
                             <li><a href="bookticket.php">BOOK TICKET</a></li>
-                            <li><a href="#">ABOUT US</a></li>
+                            <li><a href="about.php">ABOUT TEAM</a></li>
                             <li><a href="#">ABOUT BUS</a></li>
                             <li><a class="active" href="admin.php">ADMIN</a></li>
                         </ul>

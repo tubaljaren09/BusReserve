@@ -69,7 +69,7 @@
                         <ul>
                             <li><a href="index.php">HOMEPAGE</a></li>
                             <li><a class="active" href="bookticket.php">BOOK TICKET</a></li>
-                            <li><a href="#">ABOUT US</a></li>
+                            <li><a href="about.php">ABOUT TEAM</a></li>
                             <li><a href="#">ABOUT BUS</a></li>
                             <li><a href="admin.php">ADMIN</a></li>
                         </ul>
@@ -156,10 +156,9 @@
                         <div class="content">
                             <label>Route:</label>
                             <select name="route" id="route">
-                                <option value="manila to cebu">Manila - Cebu</option>
-                                <option value="cebu to manila">Cebu - Manila</option>
-                                <option value="manila to japan">Manila - Japan</option>
-                                <option value="japan to manila">Japan - Manila</option>
+                                <option value="Manila to Cebu">Manila - Cebu</option>
+                                <option value="Manila to Bicol">Manila - Bicol</option>
+                                <option value="Manila to Bataan">Manila - Bataan</option>
                             </select>
                         </div>
                         <div style="margin-top:5px;"></div>
