@@ -17,7 +17,7 @@ body{
     grid-template-columns:1fr;
     grid-template-rows:40% 210% 10%;
 }
-/* Top --------------------------------------------- */
+/* TOP ------------------------------------------------------------------ */
 .main .main-top{
     background-image:url('../images/header.jpg');
     background-size:cover;
@@ -77,7 +77,7 @@ body{
 .main .main-top .container-top .bottom .content ul li .active{
     color:white;
 }
-/* Middle --------------------------------------------------------- */
+/* MIDDLE ------------------------------------------------------------------- */
 .main .main-middle{
     animation:transitionIn 0.75s;
     background-image:url('../images/overlay.png');
@@ -133,7 +133,7 @@ body{
     justify-content:center;
     align-items:flex-end;
 }
-/* Bottom --------------------------------- */
+/* BOTTOM ------------------------------------------------------------------- */
 .main .main-bottom{
     display:flex;
     justify-content:center;
@@ -144,7 +144,7 @@ body{
     grid-column:1/2;
     grid-row:3/4;
 }
-/* Animation ------------------------------ */
+/* ANIMATION ------------------------------------------------------------------- */
 @keyframes transitionIn{
     from{
         opacity:0;
@@ -156,7 +156,7 @@ body{
         transform:translateX(0);
     }
 }
-/* Width ---------------------------------- */
+/* WIDTH -------------------------------------------------------------------------- */
 @media only screen and (max-width:1680px){
     .main .main-top .container-top{
         width:70%;
@@ -201,7 +201,7 @@ body{
         grid-template-rows:1fr 1fr;
     }
 }
-/* Height ------------------------------------ */
+/* HEIGHT ------------------------------------------------------------------------- */
 @media only screen and (max-height:805px){
     .main{
         width:100%;

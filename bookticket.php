@@ -172,8 +172,8 @@
                         </div>
                         <div style="margin-top:5px;"></div>
                         <div class="content">
-                            <label>Departure Date:</label>
-                            <input type="date" id="departure" name="departure">
+                            <label>Departure Date And Time:</label>
+                            <input type="datetime-local" id="departure" name="departure">
                         </div>
                         <input type="submit" id="submit-form" class="hidden" name="submit"> 
                 </form>

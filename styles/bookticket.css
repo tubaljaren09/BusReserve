@@ -20,6 +20,7 @@ body{
     grid-template-columns:1fr;
     grid-template-rows:40% 80% 10%;
 }
+/* TOP ---------------------------------------------------------------------------- */
 .main .main-top{
     background-image:url('../images/header.jpg');
     background-size:cover;
@@ -79,6 +80,7 @@ body{
 .main .main-top .container-top .bottom .content ul li .active{
     color:white;
 }
+/* MIDDLE ---------------------------------------------------------------------------- */
 .main .main-middle{
     animation:transitionIn 0.75s;
     background-image:url('../images/overlay.png');
@@ -160,6 +162,7 @@ body{
     padding:10px 20px;
     width:50px;
 }
+/* BOTTOM ---------------------------------------------------------------------------- */
 .main .main-bottom{
     display:flex;
     justify-content:center;
@@ -170,6 +173,7 @@ body{
     grid-column:1/2;
     grid-row:3/4;
 }
+/* ANIMATION ---------------------------------------------------------------------------- */
 @keyframes transitionIn{
     from{
         opacity:0;
@@ -190,6 +194,7 @@ body{
         opacity:1;
     }
 }
+/* WIDTH ---------------------------------------------------------------------------- */
 @media only screen and (max-width:1680px){
     .main .main-top .container-top{
         width:70%;
@@ -212,7 +217,7 @@ body{
         grid-template-rows:1fr 1fr;
     }
 }
-@media only screen and (max-width:1265px){
+@media only screen and (max-width:1285px){
     .main .main-top .container-top{
         width:90%;
         height:100%;
@@ -234,6 +239,7 @@ body{
         grid-template-rows:1fr 1fr;
     }
 }
+/* HEIGHT ---------------------------------------------------------------------------- */
 @media only screen and (max-height:800px){
     .main{
         width:100%;
