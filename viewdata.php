@@ -104,6 +104,7 @@
                                 <td><?php echo $results['route'] ?></td>
                                 <td><?php echo $results['bus'] ?></td>
                                 <td><?php echo $results['departure'] ?></td>
+                                <td><?php echo $results['price'] ?></td>
                             </tr>
                             <?php } ?>
                         </table>

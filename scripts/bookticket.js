@@ -17,7 +17,7 @@ window.onclick = function(e){
         modal.style.display = "none";
     }
 }
-
+// Price 
 document.getElementById('route').addEventListener('change', () => {
     let route = document.getElementById('route');
     let value = route.options[route.selectedIndex].value;
@@ -33,6 +33,7 @@ document.getElementById('route').addEventListener('change', () => {
     }
 });
 
+// Prevent refresh
 if(window.history.replaceState){
     window.history.replaceState(null, null, window.location.href);
 }
