@@ -18,6 +18,21 @@ window.onclick = function(e){
     }
 }
 
+document.getElementById('route').addEventListener('change', () => {
+    let route = document.getElementById('route');
+    let value = route.options[route.selectedIndex].value;
+
+    if (value == 'Manila to Cebu'){
+        document.getElementById('price').innerHTML='&#8369;1,000';
+    }
+    if (value == 'Manila to Bicol'){
+        document.getElementById('price').innerHTML='&#8369;800';
+    }
+    if (value == 'Manila to Bataan'){
+        document.getElementById('price').innerHTML='&#8369;500';
+    }
+});
+
 if(window.history.replaceState){
     window.history.replaceState(null, null, window.location.href);
 }

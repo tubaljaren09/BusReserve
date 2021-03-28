@@ -33,16 +33,16 @@
         $route = $_POST['route'];
         $bus = $_POST['bus'];
         $departure = $_POST['departure'];
+        $price = $_POST['price'];
 
         $queryRegister = "INSERT INTO covid_tracing_form(lastName, firstName, middleName, gender, age, address, contactNumber, email, question1, question2, question3) 
         VALUES ('$lastName', '$firstName', '$middleName', '$gender', '$age', '$address', '$contactNumber', '$email', '$q1', '$q2', '$q3')";
-        $queryRegister2 = "INSERT INTO ticket_form(owner_id, route, bus, departure) 
-        VALUES ((SELECT id from covid_tracing_form WHERE email='$email'), '$route', '$bus', '$departure')";
+        $queryRegister2 = "INSERT INTO ticket_form(owner_id, route, bus, departure, price) 
+        VALUES ((SELECT id from covid_tracing_form WHERE email='$email'), '$route', '$bus', '$departure', '$price')";
         $sqlRegister = mysqli_query($connection, $queryRegister);
         $sqlRegister2 = mysqli_query($connection, $queryRegister2);
 
-        echo "<script>alert('Registered')</script>";
-
+        //echo "<script>alert('Registered')</script>";
 
     }
 ?>
@@ -155,6 +155,7 @@
                         <div class="content">
                             <label>Route:</label>
                             <select name="route" id="route">
+                                <option selected disabled>Select a route</option>
                                 <option value="Manila to Cebu">Manila - Cebu</option>
                                 <option value="Manila to Bicol">Manila - Bicol</option>
                                 <option value="Manila to Bataan">Manila - Bataan</option>
@@ -164,6 +165,7 @@
                         <div class="content">
                             <label>Bus:</label>
                             <select name="bus" id="bus">
+                                <option selected disabled>Select a bus</option>
                                 <option value="Bus 1">Bus 1</option>
                                 <option value="Bus 2">Bus 2</option>
                                 <option value="Bus 3">Bus 3</option>
@@ -173,6 +175,10 @@
                         <div class="content">
                             <label>Departure Date And Time:</label>
                             <input type="datetime-local" id="departure" name="departure">
+                        </div>
+                        <div class="content">
+                            <label>Ticket Price:</label>
+                            <label id="price"></label>
                         </div>
                         <input type="submit" id="submit-form" class="hidden" name="submit"> 
                 </form>
@@ -192,5 +198,8 @@
         </div>
     </div>
 <script src="./scripts/bookticket.js"></script>
+<script src="sweetalert2.all.min.js"></script>
+<!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+<script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js">
 </body>
 </html>
