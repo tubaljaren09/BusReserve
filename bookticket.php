@@ -54,7 +54,6 @@
         $sqlRegister2 = mysqli_query($connection, $queryRegister2);
 
         //echo "<script>alert('Registered')</script>";
-
     }
 ?>
 <!DOCTYPE html>
@@ -209,5 +208,6 @@
         </div>
     </div>
 <script src="./scripts/bookticket.js"></script>
+<script src="./scripts/sweetalert2.all.min.js"></script>
 </body>
 </html>
