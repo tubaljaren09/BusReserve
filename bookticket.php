@@ -33,7 +33,18 @@
         $route = $_POST['route'];
         $bus = $_POST['bus'];
         $departure = $_POST['departure'];
-        $price = $_POST['price'];
+
+        if ($route == 'Manila to Cebu'){
+            $price = 1000;
+        }
+
+        if ($route == 'Manila to Bicol'){
+            $price = 800;
+        }
+
+        if ($route == 'Manila to Bataan'){
+            $price = 500;
+        }
 
         $queryRegister = "INSERT INTO covid_tracing_form(lastName, firstName, middleName, gender, age, address, contactNumber, email, question1, question2, question3) 
         VALUES ('$lastName', '$firstName', '$middleName', '$gender', '$age', '$address', '$contactNumber', '$email', '$q1', '$q2', '$q3')";

@@ -120,7 +120,7 @@ body{
 }
 .main .main-middle .container-middle .content .ticket-table{
     height:180px;
-    width:40%;
+    width:50%;
     overflow-y:scroll;
 }
 .main .main-middle .container-middle .content .ticket-table table{

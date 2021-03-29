@@ -96,6 +96,7 @@
                                 <th>ROUTE</th>
                                 <th>BUS</th>
                                 <th>DEPARTURE DATE</th>
+                                <th>TICKET PRICE</th>
                             </tr>
                             <?php while($results = mysqli_fetch_array($sqlAccounts)) { ?>
                             <tr>
