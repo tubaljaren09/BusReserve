@@ -95,7 +95,8 @@
                 Swal.fire({
                     title: 'Success',
                     text: 'Login Successfully',
-                    icon: 'success'
+                    icon: 'success',
+                    confirmButtonColor: '#121212'
                   }).then(function() {
                       window.location.href = 'viewdata.php';
                   })
@@ -103,9 +104,14 @@
                 //pathTo('viewdata');
             }else{
                 $_SESSION['status'] = 'invalid';
-                echo "<script>";
-                echo "Swal.fire('Error','Invalid Credentials','error');";
-                echo "</script>";
+                echo "<script>
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Invalid Credential',
+                    icon: 'error',
+                    confirmButtonColor: '#121212'
+                  })
+                </script>";
             }
         }
     }
