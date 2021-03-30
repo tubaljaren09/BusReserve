@@ -1,45 +1,3 @@
-<?php
-    require ('./database.php');
-
-    error_reporting(0);
-    
-    session_start();
-
-    function pathTo($destination){
-        echo "<script>window.location.href='/BusReserve/$destination.php'</script>";
-    }
-
-    if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
-        $_SESSION['status'] = 'invalid';
-    }
-
-    if($_SESSION['status'] == 'valid'){
-        pathTo('viewdata');
-    }
-
-    if(isset($_POST['login'])){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-
-        if(empty($username) || empty($password)){
-            echo "<script>alert('Fill up all fields')</script>";
-        }else{
-            $queryLogin = "SELECT * FROM admin WHERE user = '$username' AND pass = '$password'";
-            $sqlLogin = mysqli_query($connection, $queryLogin);
-            $rowResults = mysqli_fetch_array($sqlLogin);
-
-            if(mysqli_num_rows($sqlLogin) > 0){
-                $_SESSION['status'] = 'valid';
-                $_SESSION['username'] = $rowResults['user'];
-                echo "<script>alert('You have successfully signed in')</script>";
-                pathTo('viewdata');
-            }else{
-                $_SESSION['status'] = 'invalid';
-                echo "<script>alert('Failed')</script>";
-            }
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
@@ -98,6 +56,59 @@
             </div>
         </div>
     </div>
-    <script src="./scripts/admin.js"></script>
+<script src="./scripts/admin.js"></script>
+<script src="./scripts/sweetalert2.all.min.js"></script>
+<?php
+    require ('./database.php');
+
+    error_reporting(0);
+    
+    session_start();
+
+    function pathTo($destination){
+        echo "<script>window.location.href='/BusReserve/$destination.php'</script>";
+    }
+
+    if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
+        $_SESSION['status'] = 'invalid';
+    }
+
+    if($_SESSION['status'] == 'valid'){
+        pathTo('viewdata');
+    }
+
+    if(isset($_POST['login'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        if(empty($username) || empty($password)){
+            echo "<script>alert('Fill up all fields')</script>";
+        }else{
+            $queryLogin = "SELECT * FROM admin WHERE user = '$username' AND pass = '$password'";
+            $sqlLogin = mysqli_query($connection, $queryLogin);
+            $rowResults = mysqli_fetch_array($sqlLogin);
+
+            if(mysqli_num_rows($sqlLogin) > 0){
+                $_SESSION['status'] = 'valid';
+                $_SESSION['username'] = $rowResults['user'];
+                echo "<script>
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Login Successfully',
+                    icon: 'success'
+                  }).then(function() {
+                      window.location.href = 'viewdata.php';
+                  })
+                </script>";
+                //pathTo('viewdata');
+            }else{
+                $_SESSION['status'] = 'invalid';
+                echo "<script>";
+                echo "Swal.fire('Error','Invalid Credentials','error');";
+                echo "</script>";
+            }
+        }
+    }
+?>
 </body>
 </html>

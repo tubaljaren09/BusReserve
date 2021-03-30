@@ -1,61 +1,3 @@
-<?php
-    require ('./database.php');
-
-    error_reporting(0);
-
-    session_start();
-
-    function pathTo($destination){
-        echo "<script>window.location.href='/BusReserve/$destination.php'</script>";
-    }
-    
-     if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
-        $_SESSION['status'] = 'invalid';
-    }
-
-    if($_SESSION['status'] == 'valid'){
-        pathTo('viewdata');
-    }
-    
-    if(isset($_POST['submit'])){
-        $lastName = $_POST['lname'];
-        $firstName = $_POST['fname'];
-        $middleName = $_POST['mname'];
-        $gender = $_POST['gender'];
-        $age = $_POST['age'];
-        $address = $_POST['address'];
-        $contactNumber = $_POST['contactnumber'];
-        $email = $_POST['email'];
-        $q1 = $_POST['q1'];
-        $q2 = $_POST['q2'];
-        $q3 = $_POST['q3'];
-
-        $route = $_POST['route'];
-        $bus = $_POST['bus'];
-        $departure = $_POST['departure'];
-
-        if ($route == 'Manila to Cebu'){
-            $price = 1000;
-        }
-
-        if ($route == 'Manila to Bicol'){
-            $price = 800;
-        }
-
-        if ($route == 'Manila to Bataan'){
-            $price = 500;
-        }
-
-        $queryRegister = "INSERT INTO covid_tracing_form(lastName, firstName, middleName, gender, age, address, contactNumber, email, question1, question2, question3) 
-        VALUES ('$lastName', '$firstName', '$middleName', '$gender', '$age', '$address', '$contactNumber', '$email', '$q1', '$q2', '$q3')";
-        $queryRegister2 = "INSERT INTO ticket_form(owner_id, route, bus, departure, price) 
-        VALUES ((SELECT id from covid_tracing_form WHERE email='$email'), '$route', '$bus', '$departure', '$price')";
-        $sqlRegister = mysqli_query($connection, $queryRegister);
-        $sqlRegister2 = mysqli_query($connection, $queryRegister2);
-
-        //echo "<script>alert('Registered')</script>";
-    }
-?>
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
@@ -209,5 +151,71 @@
     </div>
 <script src="./scripts/bookticket.js"></script>
 <script src="./scripts/sweetalert2.all.min.js"></script>
+<?php
+    require ('./database.php');
+
+    error_reporting(0);
+
+    session_start();
+
+    function pathTo($destination){
+        echo "<script>window.location.href='/BusReserve/$destination.php'</script>";
+    }
+    
+     if($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
+        $_SESSION['status'] = 'invalid';
+    }
+
+    if($_SESSION['status'] == 'valid'){
+        pathTo('viewdata');
+    }
+    
+    if(isset($_POST['submit'])){
+        $lastName = $_POST['lname'];
+        $firstName = $_POST['fname'];
+        $middleName = $_POST['mname'];
+        $gender = $_POST['gender'];
+        $age = $_POST['age'];
+        $address = $_POST['address'];
+        $contactNumber = $_POST['contactnumber'];
+        $email = $_POST['email'];
+        $q1 = $_POST['q1'];
+        $q2 = $_POST['q2'];
+        $q3 = $_POST['q3'];
+
+        $route = $_POST['route'];
+        $bus = $_POST['bus'];
+        $departure = $_POST['departure'];
+
+        if ($route == 'Manila to Cebu'){
+            $price = 1000;
+        }
+
+        if ($route == 'Manila to Bicol'){
+            $price = 800;
+        }
+
+        if ($route == 'Manila to Bataan'){
+            $price = 500;
+        }
+
+        $queryRegister = "INSERT INTO covid_tracing_form(lastName, firstName, middleName, gender, age, address, contactNumber, email, question1, question2, question3) 
+        VALUES ('$lastName', '$firstName', '$middleName', '$gender', '$age', '$address', '$contactNumber', '$email', '$q1', '$q2', '$q3')";
+        $queryRegister2 = "INSERT INTO ticket_form(owner_id, route, bus, departure, price) 
+        VALUES ((SELECT id from covid_tracing_form WHERE email='$email'), '$route', '$bus', '$departure', '$price')";
+        $sqlRegister = mysqli_query($connection, $queryRegister);
+        $sqlRegister2 = mysqli_query($connection, $queryRegister2);
+
+        echo "<script>
+        Swal.fire({
+            title: 'Success',
+            html: 'Name:".$firstName."<br>Route:".$route."<br>Ticket Price:&#8369;".$english_format_number = number_format($price)."',
+            icon: 'success'
+          })
+        </script>";
+        //echo "<script>alert('Registered')</script>";
+        
+    }
+?>
 </body>
 </html>

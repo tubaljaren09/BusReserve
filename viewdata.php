@@ -1,20 +1,3 @@
-<?php 
-    require ('./database.php');
-    require ('./session.php');
-
-    error_reporting(0);
-    
-    $queryAccounts = "SELECT * FROM ticket_form";
-    $queryCovid = "SELECT * FROM covid_tracing_form";
-    $sqlAccounts = mysqli_query($connection, $queryAccounts);
-    $sqlCovid = mysqli_query($connection, $queryCovid);
-
-    if(isset($_POST['logout'])){
-        $_SESSION['status'] = 'invalid';
-        unset($_SESSION['username']);
-        pathTo('admin');
-    }
-?>
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
@@ -22,8 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BRTMA</title>
     <link rel="stylesheet" href="./styles/viewdata.css">
+    <script src="./scripts/sweetalert2.all.min.js"></script>
 </head>
 <body>
+<?php 
+require ('./database.php');
+require ('./session.php');
+
+error_reporting(0);
+
+$queryAccounts = "SELECT * FROM ticket_form";
+$queryCovid = "SELECT * FROM covid_tracing_form";
+$sqlAccounts = mysqli_query($connection, $queryAccounts);
+$sqlCovid = mysqli_query($connection, $queryCovid);
+
+if(isset($_POST['logout'])){
+    $_SESSION['status'] = 'invalid';
+    unset($_SESSION['username']);
+    pathTo('admin');
+}
+?>
     <div class="main">
         <div class="main-top">
             <div class="container-top">

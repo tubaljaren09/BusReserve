@@ -32,7 +32,6 @@ document.getElementById('route').addEventListener('change', () => {
         document.getElementById('price').innerHTML='&#8369;500';
     }
 });
-
 // Prevent refresh
 if(window.history.replaceState){
     window.history.replaceState(null, null, window.location.href);
