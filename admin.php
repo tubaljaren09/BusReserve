@@ -82,7 +82,14 @@
         $password = $_POST['password'];
 
         if(empty($username) || empty($password)){
-            echo "<script>alert('Fill up all fields')</script>";
+            echo "<script>
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Fill up all fields',
+                    icon: 'warning',
+                    confirmButtonColor: '#121212'
+                  })
+                </script>";
         }else{
             $queryLogin = "SELECT * FROM admin WHERE user = '$username' AND pass = '$password'";
             $sqlLogin = mysqli_query($connection, $queryLogin);

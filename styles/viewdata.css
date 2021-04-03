@@ -108,6 +108,19 @@ body{
     height:180px;
     overflow-y:scroll;
 }
+.main .main-middle .container-middle .content .info-table::-webkit-scrollbar{
+    width:15px;
+    border-radius:20px;
+}
+.main .main-middle .container-middle .content .info-table::-webkit-scrollbar-track{
+    background-color:#efefef;
+    border-radius:20px;
+}
+.main .main-middle .container-middle .content .info-table::-webkit-scrollbar-thumb{
+    background-color:#121212;
+    height:60px;
+    border-radius:20px;
+}
 .main .main-middle .container-middle .content .info-table table{
     height:180px;
     text-align:center;
@@ -122,6 +135,19 @@ body{
     height:180px;
     width:50%;
     overflow-y:scroll;
+}
+.main .main-middle .container-middle .content .ticket-table::-webkit-scrollbar{
+    width:15px;
+    border-radius:20px;
+}
+.main .main-middle .container-middle .content .ticket-table::-webkit-scrollbar-track{
+    background-color:#efefef;
+    border-radius:20px;
+}
+.main .main-middle .container-middle .content .ticket-table::-webkit-scrollbar-thumb{
+    background-color:#121212;
+    height:60px;
+    border-radius:20px;
 }
 .main .main-middle .container-middle .content .ticket-table table{
     height:180px;
