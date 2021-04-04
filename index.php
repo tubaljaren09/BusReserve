@@ -52,7 +52,7 @@
                     <h3>WE AIM TO PROVIDE MORE CONVENIENT TICKET BOOKING.</h3><br>
                     <img src="./images/pics02.jpg">
                     <h4>In compliance to minimum health protocols, temperature checks are being implemented to all passengers. Those with<br>temperatures above 37.6 will not allowed to board the bus and will be advised to seek medical help. Wearing of face<br>masks and face shields at all times is required.</h4><br>
-                    <button id="book">BOOK TICKET NOW</button>
+                    <button id="book"><span>BOOK TICKET </span></button>
                 </div>
             </div>
         </div>

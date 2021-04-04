@@ -49,51 +49,39 @@
             <div class="container-middle">
                 <h1>My Team</h1>
                 <div class="content-left">
-                    <img src="./images/aboutlogo.png">
+                    <img id="ferrerialogo" src="./images/ferrerialogo.png">
                     <div class="text">
-                        <h2>Ferreria</h2>
-                        <h3>Lorem Ipsum is simply dummy text of the printing adn typesetting Industry.</h3>
-                        <h3>Lorem Ipsum is simply dummy text of the printing adn typesetting Industry.</h3>  
+                        <h2>Jeremy Ferreria</h2>
                     </div>
                 </div>
                 <div class="content-right">
                     <img id="lumansoclogo" src="./images/lumansoclogo.png" alt="lumansoclogo">
                     <div class="text">
                         <h2>Klim Hazel Lumansoc</h2>
-                        <h3>Lorem Ipsum is simply dummy text of the printing adn typesetting Industry.</h3>
-                        <h3>Lorem Ipsum is simply dummy text of the printing adn typesetting Industry.</h3>  
                     </div>
                 </div>
                 <div class="content-left">
                     <img id="medinalogo" src="./images/medinalogo.png" alt="medinalogo">
                     <div class="text">
                         <h2>Christian Lambert Medina</h2>
-                        <h3>Lorem Ipsum is simply dummy text of the printing adn typesetting Industry.</h3>
-                        <h3>Lorem Ipsum is simply dummy text of the printing adn typesetting Industry.</h3>  
                     </div>
                 </div>
                 <div class="content-right">
                     <img id="sillanologo" src="./images/sillanologo.png" alt="sillanologo">
                     <div class="text">
                         <h2>Paula Monique Sillano</h2>
-                        <h3>Lorem Ipsum is simply dummy text of the printing adn typesetting Industry.</h3>
-                        <h3>Lorem Ipsum is simply dummy text of the printing adn typesetting Industry.</h3>  
                     </div>
                 </div>
                 <div class="content-left">
                     <img id="tuballogo" src="./images/tuballogo.png" alt="tuballogo">
                     <div class="text">
-                        <h2>Jaren Tubal</h2>
-                        <h3>Lorem Ipsum is simply dummy text of the printing adn typesetting Industry.</h3>
-                        <h3>Lorem Ipsum is simply dummy text of the printing adn typesetting Industry.</h3>  
+                        <h2>Jaren Tubal</h2> 
                     </div>
                 </div>
                 <div class="content-right">
                     <img src="./images/aboutlogo.png">
                     <div class="text">
-                        <h2>Unknown Name</h2>
-                        <h3>Lorem Ipsum is simply dummy text of the printing adn typesetting Industry.</h3>
-                        <h3>Lorem Ipsum is simply dummy text of the printing adn typesetting Industry.</h3>  
+                        <h2>Anya Vasquez</h2>
                     </div>
                 </div>
             </div>

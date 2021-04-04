@@ -98,13 +98,38 @@ body{
     max-height:100%;
 }
 .main .main-middle .container-middle .content button{
-    border-radius:10px;
-    background-color:#121212;
-    color:white;
-    border:none;
-    padding:20px 30px;
-    outline:none;
-    cursor:pointer;
+    border-radius: 4px;
+    background-color: #121212;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+    width: 180px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+.main .main-middle .container-middle .content button span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.main .main-middle .container-middle .content button span:after{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.main .main-middle .container-middle .content button:hover span{
+    padding-right: 25px;
+}
+.main .main-middle .container-middle .content button:hover span:after{
+    opacity: 1;
+    right: 0;
 }
 /* BOTTOM ---------------------------------------------------------------------------- */
 .main .main-bottom{

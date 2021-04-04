@@ -207,7 +207,7 @@
                     </div>
                 </div>
                 <div class="buttonnext">
-                    <button id="modalBtn" name="next">Next</button>
+                    <button id="modalBtn" name="next"><span>Next </span></button>
                 </div>
             </div>
          </div>
