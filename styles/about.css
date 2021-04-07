@@ -123,6 +123,11 @@ body{
 .main .main-middle .container-middle .content-right #lumansoclogo{
     border-radius:250px;
 }
+.main .main-middle .container-middle .content-right #vasquezlogo{
+    border-radius:50%;
+    height:320px;
+    width:320px;
+}
 .main .main-middle .container-middle .content-left .text{
     height:100%;
     display:flex;

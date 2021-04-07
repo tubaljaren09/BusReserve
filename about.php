@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="content-right">
-                    <img src="./images/aboutlogo.png">
+                    <img id="vasquezlogo" src="./images/vasquezlogo.png" alt="vasquezlogo">
                     <div class="text">
                         <h2>Anya Vasquez</h2>
                     </div>
